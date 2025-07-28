@@ -18,36 +18,36 @@
         "",
         ""
     ],
-    "BOTOWNER": "†『 ⸙ †ĸɩŋʛ ʋʑʌɩʀ.𝐱͜͡ᴆ 』†",
-    "OWNERLINK": "https://www.facebook.com/profile.php?id=61552682190483",
-    "OWNERID": "61552682190483",
-    "BOTCREATOR": "†『 ⸙ †ĸɩŋʛ ʋʑʌɩʀ.𝐱͜͡ᴆ 』†",
+    "BOTOWNER": "†『 ⸙ †ĸɩŋʛ ƙr᩶i͠𝐬ɧɳ𝗔.𝐱͜͡ᴆ 』†",
+    "OWNERLINK": "https://www.facebook.com/profile.php?id=61573328623221",
+    "OWNERID": "61573328623221",
+    "BOTCREATOR": "†『 ⸙ †ĸɩŋʛ ƙr᩶i͠𝐬ɧɳ𝗔.𝐱͜͡ᴆ 』†",
     "APIKEY": "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",
     "openai": "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",
-    "CREATORLINK": "https://www.facebook.com/profile.php?id=61552682190483",
+    "CREATORLINK": "https://www.facebook.com/profile.php?id=61573328623221",
     "PERMISSION1": [
-        "61552682190483",
+        "61573328623221",
         "",
         "",
         ""
     ],
     "RestartEvery": 30,
     "ONLY": [
-        "61552682190483",
+        "61573328623221",
         "",
         ""
     ],
     "PASSWORD": "",
     "autoaccept": "true",
     "BOTNAME": "➺ 𓆩『 ⸙   ᴅᴇᴡᴀɴɪ ᴛᴇʀɪ.𝐱͜͡ᴆ  』𓆪",
-    "PREFIX": ".",
+    "PREFIX": ",",
     "ADMINBOT": [
-        "61552682190483",
-        "100047059713717",
-        "100010054632516",
-        "100086716792385",
-        "100085739395197",
-        "61552682190483",
+        "61573328623221",
+        "61573328623221",
+        "61573328623221",
+        "61573328623221",
+        "61573328623221",
+        "61573328623221",
         "",
         "",
         "",
@@ -71,7 +71,7 @@
         ""
     ],
     "GOD": [
-        "61552682190483"
+        "61573328623221"
     ],
     "DATABASE": {
         "sqlite": {
