@@ -1,20 +1,16 @@
 module.exports.config = {
-    name: "group",
-    version: "7.3.1",
-    hasPermssion: 0,
-    credits: " Priyansh Rajput", 
-    description: "Get Pair From Mention",
-    commandCategory: "img",
-    usages: "[@mention]",
-    cooldowns: 5, 
-    dependencies: {
+        name: "group",
+        version: "1.0.1",
+        hasPermssion: 0,
+        credits: "LEGEND ARYAN",
+        description: "MADE BY LEGEND ARYAN",
+        commandCategory: "Picture",
+        cooldowns: 5,
+        dependencies: {
         "axios": "",
-        "fs-extra": "",
-        "path": "",
-        "jimp": ""
+        "fs-extra": ""
     }
-};
-
+}
 module.exports.onLoad = async() => {
     const { resolve } = global.nodemodule["path"];
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
@@ -22,7 +18,7 @@ module.exports.onLoad = async() => {
     const dirMaterial = __dirname + `/uzair/mtx/`;
     const path = resolve(__dirname, 'uzair/mtx', 'group.jpg');
     if (!existsSync(dirMaterial + "mtx")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.postimg.cc/g207Bs88/group.jpg", path); 
+    if (!existsSync(path)) await downloadFile("https://i.postimg.cc/g207Bs88/group.jpg", path);
 }
 
 async function makeImage({ one, two }) {
@@ -32,27 +28,27 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "uzair", "mtx");
 
-    let batgiam_img = await jimp.read(__root + "/group.jpg");
-    let pathImg = __root + `/batman${one}_${two}.png`;
+    let pairing_img = await jimp.read(__root + "/group.jpg");
+    let pathImg = __root + `/pairing_${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
-    
+
     let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
-    
+
     let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-8'));
-    
+
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.composite(circleOne.resize(10, 10), 5, 5).composite(circleTwo.resize(325, 325), 452, 192);
-    
-    let raw = await batgiam_img.getBufferAsync("image/png");
-    
+    pairing_img.composite(circleOne.resize(10, 10), 5, 5).composite(circleTwo.resize(325, 325), 452, 192);
+
+    let raw = await pairing_img.getBufferAsync("image/png");
+
     fs.writeFileSync(pathImg, raw);
     fs.unlinkSync(avatarOne);
     fs.unlinkSync(avatarTwo);
-    
+
     return pathImg;
 }
 async function circle(image) {
@@ -61,27 +57,26 @@ async function circle(image) {
     image.circle();
     return await image.getBufferAsync("image/png");
 }
-
-module.exports.run = async function ({ event, api, args }) {    
-    const fs = global.nodemodule["fs-extra"];
+module.exports. run = async function({ api, event, args, Users, Threads, Currencies }) {
+  const axios = require("axios");
+    const fs = require("fs-extra");
     const { threadID, messageID, senderID } = event;
-    const mention = Object.keys(event.mentions);
-    if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
-    else {
-        var nam = gendernam.length;
-    var nu = gendernu.length;
-	let qtv = threadInfo.adminIDs.length;
-	let sl = threadInfo.messageCount;
-	let u = threadInfo.nicknames;
-	let icon = threadInfo.emoji;
-	let threadName = threadInfo.threadName;
-	let id = threadInfo.threadID;
-	let sex = threadInfo.approvalMode;
-			var pd = sex == false ? 'Turned off' : sex == true ? 'Turned on' : 'Kh';
-			var callback = () =>
-		
-        const one = senderID, two = mention[0];
-        return makeImage({ one, two }).then(path => 
-            api.sendMessage({ body: "🌸🥀𝐘𝐄 𝐋𝐎 𝐀𝐀𝐏𝐊𝐄 𝐀𝐃𝐌𝐈𝐍🥀🌸\n✧═════════•❁❀❁•═════════✧\n💝🍒 𝐍𝐀𝐌𝐄 ➻ [ {name} ]\n✧═════════•❁❀❁•═════════✧\n🌸🍒 𝐆𝐑𝐎𝐔𝐏 𝐍𝐀𝐌𝐄 ➻ [ {threadName} ]\n✧═════════•❁❀❁•═════════✧\n ☟☟ 🍒🩵 बोट का मालिक  ☟☟\n              🇰‌🇷‌🇮‌🇸‌🇭‌🇳‌🇦‌\n✧═════════•❁❀❁•═════════✧\n💝🍒 ये लो मेरे बॉस की फेसबुक की लिंक ☟☟☟\nhttps://www.facebook.com/profile.php?id=61573328623221\n✧═════════•❁❀❁•═════════✧", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
-    }
+    var tl = ['21%', '67%', '19%', '37%', '17%', '96%', '52%', '62%', '76%', '83%', '100%', '99%', "0%", "48%","00%","01%","50"];
+        var tle = tl[Math.floor(Math.random() * tl.length)];
+        let dataa = await api.getUserInfo(event.senderID);
+        let namee = await dataa[event.senderID].name
+        let loz = await api.getThreadInfo(event.threadID);
+        var emoji = loz.participantIDs;
+        var id = emoji[Math.floor(Math.random() * emoji.length)];
+        let data = await api.getUserInfo(id);
+        let name = await data[id].name
+        var arraytag = [];
+                arraytag.push({id: event.senderID, tag: namee});
+                arraytag.push({id: id, tag: name});
+
+        var sex = await data[id].gender;
+        var gender = sex == 2 ? "Male🧑" : sex == 1 ? "Female👩‍  " : "Tran Duc Bo";
+var one = senderID, two = id;
+    return makeImage({ one, two }).then(path => api.sendMessage({ body: `𝐎𝐰𝐧𝐞𝐫 ➻   💐𝐌𝐑. 𝐊𝐑𝐈𝐒𝐇𝐍𝐀💐\n\n✧═════════•❁❀❁•═════════✧\n{💝💝}\n\n[[ 💞💞💞 ]]\n\n${namee}\n✧═════════•❁❀❁•═════════✧\n 🩵𝗠𝗔𝗗𝗘 𝗕𝗬 🩷\n✧═════════•❁❀❁•═════════✧\n💝𝗞𝗥𝗜𝗦𝗛𝗡𝗔 𝗕𝗔𝗕𝗨 💝◈ ──── 💚✨- 」
+`, mentions: arraytag, attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
 }
