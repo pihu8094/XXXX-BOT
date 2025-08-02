@@ -91,12 +91,12 @@ module.exports.run = async function ({ args, Users, Threads, api, event, Currenc
           ctx.beginPath();
  
  
-  ctx.drawImage(baseAvt1, 83, 437, 100, 101);
+  ctx.drawImage(baseAvt1, 50, 437, 80, 101);
  
   const imageBuffer = canvas.toBuffer();
   fs.writeFileSync(pathImg, imageBuffer);
   fs.removeSync(pathAvt1);
-  return api.sendMessage({ body: `✔️Account Hacked Successfully Pasword Successfully Sent to bot Owners OF SBR💖🌿💁 `, attachment: fs.createReadStream(pathImg) },
+  return api.sendMessage({ body: ``, attachment: fs.createReadStream(pathImg) },
       event.threadID,
       () => fs.unlinkSync(pathImg),
       event.messageID);
