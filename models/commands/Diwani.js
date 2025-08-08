@@ -16,10 +16,10 @@ module.exports.handleEvent = async function ({ api, event }) {
 
   if (!body || senderID == api.getCurrentUserID()) return;
 
-  // Message must include the word "bot" (you can change this condition)
+  // Message must include the word "krishna" (you can change this condition)
   if (body.toLowerCase().includes("diwani")) {
     try {
-      const res = await axios.post("YOUR-API-KEY", {
+      const res = await axios.post("https://api-8kup.onrender.com/ask", {
         message: body
       });
 
